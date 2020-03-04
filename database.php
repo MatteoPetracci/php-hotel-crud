@@ -22,7 +22,7 @@
       // var_dump($row);
       $rooms[] = $row;
       // var_dump($rooms);
-      echo "Stanza N. ". $row['room_number']. " piano: ".$row['floor'];
+      // echo "Stanza N. ". $row['room_number']. " piano: ".$row['floor'];
     }
   } elseif ($result) {
     echo "0 results";

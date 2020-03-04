@@ -10,24 +10,40 @@
     <title></title>
   </head>
   <body>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>FLOOR</th>
-          <th>NUMBER ROOM</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-          if (!empty($rooms)) {
-            foreach ($rooms as $room ) { ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
               <tr>
-                <td><?php echo $room['id']; ?></td>
-                <td><?php echo $room['floor']; ?></td>
-                <td><?php echo $room['room_number']; ?></td>
+                <th>ID</th>
+                <th>FLOOR</th>
+                <th>NUMBER ROOM</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                if (!empty($rooms)) {
+                  foreach ($rooms as $room ) { ?>
+                    <tr>
+                      <td><?php echo $room['id']; ?></td>
+                      <td><?php echo $room['floor']; ?></td>
+                      <td><?php echo $room['room_number']; ?></td>
+                      <td>
+                        <a href="#">View Room</a>
+                      </td>
+                      <td>
+                        <a href="#">Update</a>
+                      </td>
+                      <td>Delete</td>
+                    </tr>
+                <?php } ?>
+              <?php  } ?>
+              <tr>
+                <td></td>
+                <td></td>
                 <td>
                   <a href="#">View Room</a>
                 </td>
@@ -36,20 +52,10 @@
                 </td>
                 <td>Delete</td>
               </tr>
-          <?php } ?>
-        <?php  } ?>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#">View Room</a>
-          </td>
-          <td>
-            <a href="#">Update</a>
-          </td>
-          <td>Delete</td>
-        </tr>
-      </tbody>
-    </table>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
