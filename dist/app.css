@@ -10884,3 +10884,14 @@ a.text-dark:focus {
   }
 }
 
+header {
+  width: 80%;
+  margin: auto;
+}
+
+header h1 {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+}
+

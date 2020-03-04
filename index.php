@@ -1,11 +1,12 @@
 <?php
   include 'database.php';
   include 'partials/header.php';
-
 ?>
-
   <body>
-    <div class="container">
+    <header>
+      <h1>ALL ROOMS</h1>
+    </header>
+    <div class="container my-sm-4 ">
       <div class="row">
         <div class="col-12">
           <table class="table">
