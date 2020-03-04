@@ -32,7 +32,8 @@
                       <td><?php echo $room['floor']; ?></td>
                       <td><?php echo $room['room_number']; ?></td>
                       <td>
-                        <a href="#">View Room</a>
+                        <!-- Con href creo un link per andare su show.php dove popolo ogni volta l'id -->
+                        <a href="show/show.php?id=<?php echo $room['id']; ?>">View Room</a>
                       </td>
                       <td>
                         <a href="#">Update</a>
@@ -41,17 +42,6 @@
                     </tr>
                 <?php } ?>
               <?php  } ?>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#">View Room</a>
-                </td>
-                <td>
-                  <a href="#">Update</a>
-                </td>
-                <td>Delete</td>
-              </tr>
             </tbody>
           </table>
         </div>
