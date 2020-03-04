@@ -10,7 +10,7 @@
     $rooms = [];
     while($row = $result->fetch_assoc()) {
       $rooms[] = $row;
-      var_dump($rooms);
+      // var_dump($rooms);
 
     }
   } elseif ($result) {

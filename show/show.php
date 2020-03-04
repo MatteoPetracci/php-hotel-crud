@@ -1,13 +1,41 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
+<?php
+  include __DIR__ . '/../partials/header.php';
+?>
   <body>
-    <?php
-      include 'server.php';
-      var_dump($room);
-     ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+              <thead>
+                <?php
+                include 'server.php';
+                // var_dump($room);
+                ?>
+                <table class="table">
+                <tr>
+                  <th>ID: </th>
+                  <th>FLOOR: </th>
+                  <th>NUMBER ROOM:</th>
+                  <th>BEDS:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  if (!empty($rooms)) {
+                    foreach ($rooms as $room ) { ?>
+                      <tr>
+                        <td><?php echo $room['id']; ?></td>
+                        <td><?php echo $room['floor']; ?></td>
+                        <td><?php echo $room['room_number']; ?></td>
+                        <td><?php echo $room['beds']; ?></td>
+                      </tr>
+                  <?php } ?>
+                <?php  } ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
