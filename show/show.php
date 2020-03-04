@@ -25,7 +25,7 @@
                   if (!empty($rooms)) {
                     foreach ($rooms as $room ) { ?>
                       <tr>
-                        <td><?php echo $room['id']; ?></td>
+                        <td class="btn-primary"><?php echo $room['id']; ?></td>
                         <td><?php echo $room['floor']; ?></td>
                         <td><?php echo $room['room_number']; ?></td>
                         <td><?php echo $room['beds']; ?></td>
