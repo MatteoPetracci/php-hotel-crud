@@ -34,7 +34,7 @@
                       <td>
                         <a href="#">Update</a>
                       </td>
-                      <td>Delete</td>
+                      <td class="btn-danger">Delete</td>
                     </tr>
                 <?php } ?>
               <?php  } ?>
