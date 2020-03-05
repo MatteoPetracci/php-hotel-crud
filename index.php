@@ -1,5 +1,5 @@
 <?php
-  include 'database.php';
+  include 'server.php';
   include 'partials/header.php';
 ?>
   <body>
@@ -34,7 +34,7 @@
                       <td>
                         <a href="#">Update</a>
                       </td>
-                      <td class="btn-danger">Delete</td>
+                      <td class="btn btn-danger">Delete</td>
                     </tr>
                 <?php } ?>
               <?php  } ?>
