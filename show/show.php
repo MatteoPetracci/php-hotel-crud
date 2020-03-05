@@ -1,5 +1,5 @@
 <?php
-  include 'server.php'; 
+  include 'server.php';
   include __DIR__ . '/../partials/header.php';
 ?>
   <body>
@@ -8,10 +8,6 @@
         <div class="col-12">
           <div class="card my-sm-4 ">
               <thead>
-                <?php
-                include 'server.php';
-                // var_dump($room);
-                ?>
                 <table class="table">
                 <tr>
                   <th>ID: </th>
@@ -23,8 +19,7 @@
               </thead>
               <tbody>
                 <?php
-                  if (!empty($rooms)) {
-                    foreach ($rooms as $room ) { ?>
+                  if (!empty($room)) { ?>
                       <tr>
                         <td class="btn-primary"><?php echo $room['id']; ?></td>
                         <td><?php echo $room['floor']; ?></td>
@@ -32,7 +27,6 @@
                         <td><?php echo $room['beds']; ?></td>
                         <td><?php echo $room['updated_at']; ?></td>
                       </tr>
-                  <?php } ?>
                 <?php  } ?>
               </tbody>
             </table>
