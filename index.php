@@ -20,6 +20,7 @@
               </tr>
             </thead>
             <tbody>
+              <!-- Se stanza non è vuoto ad ogni giro stampo i dati necessari -->
               <?php
                 if (!empty($rooms)) {
                   foreach ($rooms as $room ) { ?>

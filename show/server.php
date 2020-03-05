@@ -1,5 +1,6 @@
 <?php
-  include 'database.php';
+  include __DIR__ . '/../database.php';
+
   // Salvo in una variabile il GET
   $roomId = $_GET['id'];
   // Seleziono da stanze dove l'id è uguale a quello salvato nella variabile
