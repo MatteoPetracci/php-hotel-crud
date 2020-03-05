@@ -35,7 +35,12 @@
                       <td>
                         <a href="#">Update</a>
                       </td>
-                      <td class="btn btn-danger">Delete</td>
+                      <td>
+                        <form action="delete/server.php" method="post">
+                          <input type="hidden" name="id" value="<?php echo $room['id']; ?>">
+                          <input class="btn btn-danger" type="submit"value="Delete">
+                        </form>
+                      </td>
                     </tr>
                 <?php } ?>
               <?php  } ?>
