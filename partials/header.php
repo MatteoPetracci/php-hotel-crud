@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-12">
           <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="../index.php">Home</a>
+            <a class="navbar-brand" href="<?php echo $path ?>">Home</a>
             <a class="navbar-brand" href="<?php echo $path ?>create/create.php">Enter a room</a>
           </nav>
         </div>

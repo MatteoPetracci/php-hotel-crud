@@ -38,7 +38,7 @@ $sql = "SELECT * FROM `$nameTable` WHERE `id` = '$id'";
   } else {
     $result = false;
   }
-  $conn->close();
+  // $conn->close();
   return $result;
 }
 

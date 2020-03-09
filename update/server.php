@@ -1,18 +1,19 @@
 <?php
   include_once __DIR__ . '/../env.php';
   include_once __DIR__ . '/../database.php';
+  include_once __DIR__ . '/../functions.php';
 
   if (empty($_POST['id'])) {
-  die('Id non inserito');
+  die('No id');
 }
   if (empty($_POST['beds'])) {
-    die('Non hai inserito il numero di letti');
+    die('No beds');
   }
   if (empty($_POST['floor'])) {
-    die('Non hai inserito il piano');
+    die('No floor');
   }
   if (empty($_POST['room_number'])) {
-    die('Non hai inserito il numero di stanza');
+    die('No room number');
   }
 
   $roomId = $_POST['id'];
@@ -20,30 +21,42 @@
   $floor = $_POST['floor'];
   $roomNum = $_POST['room_number'];
    // var_dump($roomId); die();
-  // // Creo la query
-  $sql = "SELECT * FROM `stanze` WHERE `id` = $roomId";
 
-  $result = $conn->query($sql);
+  $result = getId($conn, 'stanze', $roomId);
+
   // var_dump($result); die();
-  // // //
-  if ($result && $result->num_rows > 0) {
-      $room = $result->fetch_assoc();
-  } else {
-    die("0 results");
-  }
 
-  $sql = "UPDATE `stanze` SET `room_number` = ?, `beds` = ?, `floor` = ?, `update_at` = NOW() WHERE `id` = ?";
+    if (count($result) > 0) {
+      $sql = "UPDATE `stanze` SET `room_number` = ?, `beds` = ?, `floor` = ?, `updated_at` = NOW() WHERE id = ?";
 
-  $stmt = $conn->prepare();
-  $stmt->bind_param("iiii", $roomNumber, $beds, $floor, $roomId);
-  $stmt->execute();
+      $stmt = $conn->prepare($sql);
+      // var_dump($stmt); die();
+
+      $stmt->bind_param("iiii", $roomNum, $beds, $floor, $roomId);
+      $stmt->execute();
+      //
+      if ($stmt->affected_rows > 0) {
+        header("Location: $path/show/show.php?id=$roomId");
+      } else {
+        echo 'error';
+      }
+    } else {
+      die('error room');
+    }
+
+    $conn->close()
+
+  // // Creo la query
+  // $sql = "SELECT * FROM `stanze` WHERE `id` = $roomId";
   //
-  if ($stmt->affected_rows > 0) {
-    header("Location: $path/show/show.php?id=$roomId");
-  } else {
-    echo 'error';
-  }
+  // $result = $conn->query($sql);
+  // // var_dump($result); die();
+  // // // //
+  // if ($result && $result->num_rows > 0) {
+  //     $room = $result->fetch_assoc();
+  // } else {
+  //   die("0 results");
+  // }
 
-  $conn->close();
 
 ?>

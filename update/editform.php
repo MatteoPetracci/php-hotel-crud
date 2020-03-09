@@ -23,7 +23,7 @@ include __DIR__ . '/../partials/header.php';
   <div class="row">
     <div class="col-12">
       <!-- Prende la query dal server.php -->
-      <form class="server.php" method="post">
+      <form action="server.php" method="post">
         <div class="form-group">
           <label for="room_number">Room number</label>
           <input class="form-control" type="text" name="room_number" value="<?php echo $room['room_number'];?>">
@@ -38,8 +38,8 @@ include __DIR__ . '/../partials/header.php';
         </div>
         <!-- l'input nascosto conterrà l'id della stanza specifica -->
         <div class="form-group">
-          <input type="hidden" name="id" value="<?php echo $room['id'];?>">
-          <input  type="submit" class="btn btn-success form-control" name="" value="Save">
+          <input type="hidden" name="id" value="<?php echo $roomId['id'];?>">
+          <input type="submit" class="btn btn-success form-control" value="Save">
         </div>
       </form>
     </div>
