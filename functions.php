@@ -23,6 +23,24 @@ function getAll($conn, $nameTable) {
   }
   $conn->close();
   return $results;
-} 
+}
+
+function getId($conn, $nameTable, $id) {
+$sql = "SELECT * FROM `$nameTable` WHERE `id` = '$id'";
+
+  $resultId = $conn->query($sql);
+
+  if ($resultId && $resultId->num_rows > 0) {
+      $result = $resultId->fetch_assoc();
+      // var_dump($rooms);
+  } elseif ($resultId) {
+    $result = [];
+  } else {
+    $result = false;
+  }
+  $conn->close();
+  return $result;
+}
+
 
 ?>
