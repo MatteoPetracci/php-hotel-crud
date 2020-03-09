@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-12">
       <!-- Prende la query dal server.php -->
-      <form class="server.php" method="post">
+      <form action="server.php" method="get">
         <div class="form-group">
           <label for="room_number">Room number</label>
           <input class="form-control" type="text" name="room_number" value="">

@@ -23,9 +23,9 @@ $sql = "INSERT INTO `stanze` (`beds`,`floor`,`room_number`,`created_at`, `update
 
 $stmt = $conn->prepare($sql);
 
-$stmt = $conn->bind_param("iii", $beds, $floor, $roomNum);
+$stmt->bind_param("iii", $beds, $floor, $roomNum);
 
-$stmt->execute($stmt);
+$stmt->execute();
 // isset - Determina se una variabile è dichiarata ed è diversa daNULL
 if (isset($stmt->insert_id)) {
   header("Location: $path/show/show.php?id=$stmt->insert_id");
