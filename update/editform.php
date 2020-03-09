@@ -1,6 +1,22 @@
 <?php
-  include 'server.php';
-  include __DIR__ . '/../partials/header.php';
+include __DIR__ . '/../database.php';
+include __DIR__ . '/../partials/header.php';
+
+  if (!empty($_GET['id'])) {
+    $roomId = $_GET['id'];
+  }
+  // Creo la query
+  $sql = "SELECT * FROM `stanze` WHERE `id`='$roomId'";
+
+  $result = $conn->query($sql);
+
+  if ($result && $result->num_rows > 0) {
+    $room = $result->fetch_assoc();
+  }
+  else {
+    die('error');
+  }
+
 ?>
 
 <div class="container">
@@ -22,7 +38,7 @@
         </div>
         <!-- l'input nascosto conterrà l'id della stanza specifica -->
         <div class="form-group">
-          <input type="hidden" name="id" value="">
+          <input type="hidden" name="id" value="<?php echo $room['id'];?>">
           <input  type="submit" class="btn btn-success form-control" name="" value="Save">
         </div>
       </form>

@@ -1,4 +1,4 @@
-<?php include_once 'env.php' ?>
+<?php include_once __DIR__ . '/../env.php' ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -13,11 +13,10 @@
         <div class="col-12">
           <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="../index.php">Home</a>
+            <a class="navbar-brand" href="<?php echo $path ?>create/create.php">Enter a room</a>
           </nav>
         </div>
       </div>
     </div>
   </header>
     <div class="wrapper">
-
-    

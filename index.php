@@ -22,8 +22,10 @@
             <tbody>
               <!-- Se stanza non è vuoto ad ogni giro stampo i dati necessari -->
               <?php
-                if (!empty($rooms)) {
-                  foreach ($rooms as $room ) { ?>
+              // var_dump($results);
+              //   ritorna false ???
+                if (!empty($results)) {
+                  foreach ($results as $room ) { ?>
                     <tr>
                       <td class="btn-primary"><?php echo $room['id']; ?></td>
                       <td><?php echo $room['floor']; ?></td>
@@ -49,5 +51,4 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+<?php include 'partials/footer.php'; ?>
