@@ -23,7 +23,7 @@
         <!-- l'input nascosto conterrà l'id della stanza specifica -->
         <div class="form-group">
           <input type="hidden" name="id" value="">
-          <input class="form-control" type="submit" class="btn btn-success" name="" value="Save">
+          <input  type="submit" class="btn btn-success form-control" name="" value="Save">
         </div>
       </form>
     </div>
