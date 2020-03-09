@@ -5,7 +5,7 @@
   $roomId = $_POST['id'];
 
   if (empty($roomId)) {
-    echo ('Id inserito sbagliato');
+    echo ('ID sbagliato');
   }
 
   $sql = "DELETE FROM `stanze` WHERE `id`='$roomId'";
@@ -13,11 +13,11 @@
 
   // var_dump($result);
   // echo 'cancellato'
-
+  
   if ($result) {
-    echo 'cancellato';
+    header("Location: $path?roomNumber=$roomId");
   } else {
-    echo 'errore';
+    echo 'error';
   }
   $conn->close();
 ?>
