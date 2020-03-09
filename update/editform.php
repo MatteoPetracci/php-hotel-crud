@@ -10,15 +10,15 @@
       <form class="server.php" method="post">
         <div class="form-group">
           <label for="room_number">Room number</label>
-          <input class="form-control" type="text" name="room_number" value="">
+          <input class="form-control" type="text" name="room_number" value="<?php echo $room['room_number'];?>">
         </div>
         <div class="form-group">
           <label for="beds">Beds</label>
-          <input class="form-control" type="text" name="beds" value="">
+          <input class="form-control" type="text" name="beds" value="<?php echo $room['beds'];?>">
         </div>
         <div class="form-group">
           <label for="floor">Floor</label>
-          <input class="form-control" type="text" name="floor" value="">
+          <input class="form-control" type="text" name="floor" value="<?php echo $room['floor'];?>">
         </div>
         <!-- l'input nascosto conterrà l'id della stanza specifica -->
         <div class="form-group">
