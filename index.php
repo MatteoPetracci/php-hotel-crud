@@ -33,7 +33,7 @@
                         <a href="show/show.php?id=<?php echo $room['id']; ?>">View Room</a>
                       </td>
                       <td>
-                        <a href="update/editform.php">Update</a>
+                        <a href="update/editform.php?id=<?php echo $room['id'];?>">Update</a>
                       </td>
                       <td>
                         <form action="delete/server.php" method="post">
